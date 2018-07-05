@@ -10,32 +10,83 @@ body {
    background-color: #0B1126;
 }
 
+:root {
+   font-size: 100%;
+}
+
 .header {
    position: relative;
+   z-index: 20;
    width: 100%;
-   height: 55px;
+   height: 2.75rem;
+   background-color: #293988;
    background: linear-gradient(#1E2E78, #293988);
-   border-bottom: 3px solid #18224F;
+   border-bottom: 0.1875rem solid #18224F; // 3px
+
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 0 1rem;
+   box-sizing: border-box;
 
    .menu-button {
       position: absolute;
-      bottom: 5px;
-      right: 20px;
+      bottom: 0;
+      right: 2rem;
 
-      color: #eee;
+      color: #fff;
       text-decoration: none;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+   }
+
+   .mdn-logo {
+      filter: drop-shadow(0 3px 3px rgba(0,0,0,.2));
+
+      svg {
+         margin-top: 0.5rem;
+         margin-right: -1rem;
+         height: 3rem;
+      }
    }
 }
 
 .featured-post {
+   height: 16rem;
+   position: relative;
 
+   display: flex;
+   align-items: flex-end;
+
+   background-color: #321;
+   background-image: url('../media/featured-image.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+   padding: 1rem 1rem;
+   box-sizing: border-box;
+   border-bottom: 0.1rem solid $primary-color;
+
+   &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: linear-gradient(rgba(0,0,0,0%), rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+      height: 100%;
+      width: 100%;
+   }
 
    .post-content {
+      z-index: 2;
+      text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+
       .category {
          font-family: 'Montserrat', sans-serif;
-         font-size: 12px;
+         font-size: 0.75rem;
          text-transform: uppercase;
          color: $primary-color;
          position: relative;
@@ -43,19 +94,21 @@ body {
          &:after {
             content: "";
             position: absolute;
-            width: 16px;
-            border-bottom: 1px solid $primary-color;
-            bottom: -2px;
-            left: 2px;
+            width: 1rem; //16px
+            border-bottom: 0.0625rem solid $primary-color; //1px
+            bottom: -0.125rem; //-2px
+            left: 0.125rem; //2px
          }
       }
 
       .title {
          margin: 0;
-         margin-top: 15px;
-         color: #eee;
+         margin-top: 0.75rem;
+         color: #fff;
          font-family: 'Montserrat', sans-serif;
          font-weight: 600;
+
+         font-size: 1.75rem;
       }
    }
 }
