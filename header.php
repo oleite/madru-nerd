@@ -20,7 +20,13 @@
    <body <?php body_class(); ?>>
 
       <div class="header">
-         <a href="" class="mdn-logo"><?php echo file_get_contents( get_stylesheet_directory_uri() . '/media/logo_mdn_prov.min.svg' ); ?></a>
+         <h1 class="site-title">
+            <a href="<?php home_url(); ?>">
+               <span class="mdn-logo"><?php echo file_get_contents( get_stylesheet_directory_uri() . '/media/logo_mdn_prov.min.svg' ); ?></span>
+               <span style="display: none"><?php bloginfo( 'name' ); ?></span>
+            </a>
+         </h1>
+
          <a href="#" class="menu-button">
             Menu
             <?xml version="1.0"?>

@@ -1,4 +1,5 @@
 $primary-color: #FFDA18;
+$break: 800px;
 
 body,
 html {
@@ -11,7 +12,7 @@ body {
 }
 
 :root {
-   font-size: 100%;
+
 }
 
 .header {
@@ -29,6 +30,10 @@ body {
    padding: 0 1rem;
    box-sizing: border-box;
 
+   @media (min-width: $break) {
+      padding: 0 2rem;
+   }
+
    .menu-button {
       position: absolute;
       bottom: 0;
@@ -41,13 +46,22 @@ body {
       filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
    }
 
-   .mdn-logo {
-      filter: drop-shadow(0 3px 3px rgba(0,0,0,.2));
+   .site-title {
+      margin: 0;
 
-      svg {
-         margin-top: 0.5rem;
-         margin-right: -1rem;
-         height: 3rem;
+      .mdn-logo {
+         filter: drop-shadow(0 3px 3px rgba(0,0,0,.2));
+
+         svg {
+            margin-top: 0.5rem;
+            height: 3rem;
+
+            transition: all 200ms ease;
+
+            @media (min-width: $break) {
+               height: 5rem;
+            }
+         }
       }
    }
 }
@@ -69,6 +83,11 @@ body {
    box-sizing: border-box;
    border-bottom: 0.1rem solid $primary-color;
 
+   @media (min-width: $break) {
+      height: 23rem;
+      padding: 1rem 2rem;
+   }
+
    &:after {
       content: "";
       position: absolute;
@@ -83,10 +102,15 @@ body {
    .post-content {
       z-index: 2;
       text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+      text-decoration: none;
+
+      @media (min-width: $break) {
+         font-size: 1.25rem;
+      }
 
       .category {
          font-family: 'Montserrat', sans-serif;
-         font-size: 0.75rem;
+         font-size: 0.75em;
          text-transform: uppercase;
          color: $primary-color;
          position: relative;
@@ -94,8 +118,8 @@ body {
          &:after {
             content: "";
             position: absolute;
-            width: 1rem; //16px
-            border-bottom: 0.0625rem solid $primary-color; //1px
+            width: 1.25em; //16px
+            border-bottom: 0.078125em solid $primary-color; //1px
             bottom: -0.125rem; //-2px
             left: 0.125rem; //2px
          }
@@ -103,12 +127,12 @@ body {
 
       .title {
          margin: 0;
-         margin-top: 0.75rem;
+         margin-top: 0.5em;
          color: #fff;
          font-family: 'Montserrat', sans-serif;
          font-weight: 600;
 
-         font-size: 1.75rem;
+         font-size: 1.75em;
       }
    }
 }
