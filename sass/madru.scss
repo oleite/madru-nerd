@@ -15,6 +15,19 @@ body {
 
 }
 
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.wrapper {
+   color: #eee;
+}
+
+
+
+
+
 .header {
    position: relative;
    z-index: 20;
@@ -66,7 +79,8 @@ body {
    }
 }
 
-.featured-post {
+.featured-primary,
+.featured-secondary {
    height: 16rem;
    position: relative;
 

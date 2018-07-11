@@ -2,6 +2,10 @@ body, html { margin: 0; padding: 0; }
 
 body { background-color: #0B1126; }
 
+a { text-decoration: none; color: inherit; }
+
+.wrapper { color: #eee; }
+
 .header { position: relative; z-index: 20; width: 100%; height: 2.75rem; background-color: #293988; background: -webkit-gradient(linear, left top, left bottom, from(#1E2E78), to(#293988)); background: linear-gradient(#1E2E78, #293988); border-bottom: 0.1875rem solid #18224F; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; padding: 0 1rem; -webkit-box-sizing: border-box; box-sizing: border-box; }
 @media (min-width: 800px) { .header { padding: 0 2rem; } }
 .header .menu-button { position: absolute; bottom: 0; right: 2rem; color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)); filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)); }
@@ -10,13 +14,13 @@ body { background-color: #0B1126; }
 .header .site-title .mdn-logo svg { margin-top: 0.5rem; height: 3rem; -webkit-transition: all 200ms ease; transition: all 200ms ease; }
 @media (min-width: 800px) { .header .site-title .mdn-logo svg { height: 5rem; } }
 
-.featured-post { height: 16rem; position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; background-color: #321; background-image: url("../media/featured-image.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 1rem 1rem; -webkit-box-sizing: border-box; box-sizing: border-box; border-bottom: 0.1rem solid #FFDA18; }
-@media (min-width: 800px) { .featured-post { height: 23rem; padding: 1rem 2rem; } }
-.featured-post:after { content: ""; position: absolute; z-index: 1; top: 0; left: 0; background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.9))); background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)); height: 100%; width: 100%; }
-.featured-post .post-content { z-index: 2; text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); text-decoration: none; }
-@media (min-width: 800px) { .featured-post .post-content { font-size: 1.25rem; } }
-.featured-post .post-content .category { font-family: 'Montserrat', sans-serif; font-size: 0.75em; text-transform: uppercase; color: #FFDA18; position: relative; }
-.featured-post .post-content .category:after { content: ""; position: absolute; width: 1.25em; border-bottom: 0.078125em solid #FFDA18; bottom: -0.125rem; left: 0.125rem; }
-.featured-post .post-content .title { margin: 0; margin-top: 0.5em; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.75em; }
+.featured-primary, .featured-secondary { height: 16rem; position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; background-color: #321; background-image: url("../media/featured-image.png"); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 1rem 1rem; -webkit-box-sizing: border-box; box-sizing: border-box; border-bottom: 0.1rem solid #FFDA18; }
+@media (min-width: 800px) { .featured-primary, .featured-secondary { height: 23rem; padding: 1rem 2rem; } }
+.featured-primary:after, .featured-secondary:after { content: ""; position: absolute; z-index: 1; top: 0; left: 0; background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.9))); background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)); height: 100%; width: 100%; }
+.featured-primary .post-content, .featured-secondary .post-content { z-index: 2; text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); text-decoration: none; }
+@media (min-width: 800px) { .featured-primary .post-content, .featured-secondary .post-content { font-size: 1.25rem; } }
+.featured-primary .post-content .category, .featured-secondary .post-content .category { font-family: 'Montserrat', sans-serif; font-size: 0.75em; text-transform: uppercase; color: #FFDA18; position: relative; }
+.featured-primary .post-content .category:after, .featured-secondary .post-content .category:after { content: ""; position: absolute; width: 1.25em; border-bottom: 0.078125em solid #FFDA18; bottom: -0.125rem; left: 0.125rem; }
+.featured-primary .post-content .title, .featured-secondary .post-content .title { margin: 0; margin-top: 0.5em; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.75em; }
 
 /*# sourceMappingURL=madru.css.map */
