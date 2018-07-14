@@ -35,17 +35,18 @@
                   $queryPrimary->the_post();
    ?>
 
-                  <div class="featured-primary">
-                     <div class="post-content">
-                        <span class="category"><?php the_category(' | '); ?></span>
-                        <h2 class="title">
+                     <article class="featured-post featured-primary">
+                        <div class="post-content">
                            <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                              <?php the_title(); ?>
+                              <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
                            </a>
-                           |-> <?php echo get_post_meta( get_the_id(), 'madru_featured', true); ?>
-                        </h2>
-                     </div>
-                  </div>
+                           <footer class="post-footer">
+                              <h3 class="category"><?php the_category(' | '); ?></h3>
+                              <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
+                              <h2 class="title"><?php the_title(); ?><h2>
+                           </footer>
+                        </div>
+                     </article>
 
       <?php endwhile; endif; ?>
 
@@ -75,17 +76,18 @@
                      $querySecondary->the_post();
       ?>
 
-                     <div class="featured-secondary">
+                     <article class="featured-post featured-secondary">
                         <div class="post-content">
-                           <span class="category"><?php the_category(' | '); ?></span>
-                           <h2 class="title">
+                           <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
+                              <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                           </a>
+                           <footer class="post-footer">
+                              <h3 class="category"><?php the_category(' | '); ?></h3>
                               <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                                 <?php the_title(); ?>
-                              </a>
-                              |-> <?php echo get_post_meta( get_the_id(), 'madru_featured', true); ?>
-                           </h2>
+                              <h2 class="title"><?php the_title(); ?><h2>
+                           </footer>
                         </div>
-                     </div>
+                     </article>
 
          <?php endwhile; endif; ?>
 

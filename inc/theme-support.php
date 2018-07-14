@@ -16,6 +16,10 @@ function madru_register_nav_menu() {
 add_action('after_setup_theme', 'madru_register_nav_menu');
 
 
+//Post Thumbnails
+add_theme_support( 'post-thumbnails' );
+
+
 
 /*
    =====================
