@@ -151,3 +151,121 @@
 
 	     }
 	 }
+
+
+
+
+
+
+ /*
+    =====================
+       THEME DEPENDENCIES ALERT
+       Alerta para dependências (plugins) do tema que não forem cumpridas
+
+       PaulGwamanda - https://gist.github.com/PaulGwamanda/0310a88338e604dec0127435e272c72e
+    =====================
+ */
+
+	 function madru_check_theme_dependencies() {
+	     $missing = array();
+	     $plugins = array(
+	         'cmb2/init.php' => 'CMB2',
+	     );
+	     foreach($plugins as $plugin => $name) {
+	         if(!is_plugin_active($plugin) )
+	             $missing[$plugin] = $name;
+	     }
+	     return $missing;
+	 }
+
+	 /**
+	  * Check for theme required plugins
+	  *
+	  */
+	 function madru_theme_dependencies() {
+	     $plugins = madru_check_theme_dependencies();
+	     foreach($plugins as $plugin => $name) {
+	         if(!is_plugin_active($plugin) )
+	             echo '<div class="error"><p>' . sprintf(__( 'Aviso: O tema madru-nerd depende do plugin <b>%s</b>', 'madru-nerd'), $name ) . ' <a href="'.admin_url().'plugins.php">' . sprintf(__( 'View Plugins', 'madru-nerd'), $name ) . '</a></p></div>';
+	     }
+	 }
+	 add_action( 'admin_notices', 'madru_theme_dependencies' );
+
+
+
+/*
+ =====================
+    RESPONSIFY.JS FEATURED IMAGE DATA-FOCUS METABOX
+	 *using CMB2
+ =====================
+*/
+
+add_action( 'cmb2_admin_init', 'madru_register_featimage_data_focus' );
+
+function madru_register_featimage_data_focus() {
+	$prefix = '_madru_data_focus_';
+
+	$featimage_data_focus = new_cmb2_box( array(
+		'id'            => $prefix . 'featimage_data_focus',
+		'title'         => 'Foco da imagem em destaque',
+		'object_types'  => array( 'post' ), // Post type
+		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+		// 'context'    => 'side',
+		 'priority'   => 'low',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+		// 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
+	) );
+
+	$featimage_data_focus->add_field( array(
+		'name' => 'howto',
+		'id'   => $prefix . 'note',
+		'type' => 'text_small',
+		'render_row_cb' => 'Utilize <a href="http://responsifyjs.space/app/">http://responsifyjs.space/app/</a> e insira as coordenadas abaixo',
+	) );
+
+	$featimage_data_focus->add_field( array(
+		'name' => esc_html__( 'Left', 'cmb2' ),
+		'id'   => $prefix . 'left',
+		'type' => 'text_small',
+		'default' => '1',
+		//'render_row_cb' => 'yourprefix_render_row_cb',
+	) );
+	$featimage_data_focus->add_field( array(
+		'name' => esc_html__( 'Top', 'cmb2' ),
+		'id'   => $prefix . 'top',
+		'type' => 'text_small',
+		'default' => '1',
+		//'render_row_cb' => 'yourprefix_render_row_cb',
+	) );
+	$featimage_data_focus->add_field( array(
+		'name' => esc_html__( 'Right', 'cmb2' ),
+		'id'   => $prefix . 'right',
+		'type' => 'text_small',
+		'default' => '1',
+		//'render_row_cb' => 'yourprefix_render_row_cb',
+	) );
+	$featimage_data_focus->add_field( array(
+		'name' => esc_html__( 'Bottom', 'cmb2' ),
+		'id'   => $prefix . 'bottom',
+		'type' => 'text_small',
+		'default' => '1',
+		//'render_row_cb' => 'yourprefix_render_row_cb',
+	) );
+}
+
+function madru_data_focus( $post_id ) {
+	$left = get_post_meta( $post_id, '_madru_data_focus_left', true);
+	$top = get_post_meta( $post_id, '_madru_data_focus_top', true);
+	$right = get_post_meta( $post_id, '_madru_data_focus_right', true);
+	$bottom = get_post_meta( $post_id, '_madru_data_focus_bottom', true);
+
+ 	return array(
+		'data-focus-left' 	=> $left,
+		'data-focus-top' 		=> $top,
+		'data-focus-right' 	=> $right,
+		'data-focus-bottom' 	=> $bottom
+	);
+}

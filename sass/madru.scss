@@ -27,7 +27,6 @@ a {
 
 
 
-
 .header {
    position: relative;
    z-index: 20;
@@ -79,16 +78,55 @@ a {
    }
 }
 
+
+
+
+
+
+.featured-posts-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+
+   border-bottom: 0.1rem solid $primary-color;
+
+   @media (min-width: 600px) {
+      flex-direction: row;
+   }
+}
+.featured-secondary-posts-container {
+   min-height: 60vh;
+   max-height: 100%;
+   flex: 1;
+
+   display: flex;
+   flex-direction: column;
+
+}
+.featured-primary {
+   min-height: 40vh;
+   max-height: 100%;
+
+   .post-footer .title {
+      font-size: 1.75em;
+   }
+}
+.featured-secondary {
+   .post-footer .title {
+      font-size: 1.5em;
+   }
+}
 .featured-post {
-   height: 16rem;
+   flex: 1;
+
+   min-height: 13rem;
    position: relative;
 
    padding: 1rem 1rem;
    box-sizing: border-box;
-   border-bottom: 0.1rem solid $primary-color;
 
    @media (min-width: $break) {
-      height: 23rem;
+      //height: 23rem;
       padding: 1rem 2rem;
    }
 
@@ -96,8 +134,9 @@ a {
 
    &:hover {
       .featured-image {
-         background-size: 100%;
-
+         img {
+            transform: scale(1);
+         }
          &:after {
             opacity: 0.8;
          }
@@ -124,12 +163,12 @@ a {
       left: 0;
 
       background-color: #321;
-      background-image: url('../media/featured-image.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 110%;
+      overflow: hidden;
 
-      transition: background-size 750ms $custom-easing1;
+      img {
+         transition: transform 750ms $custom-easing1;
+         transform: scale(1.07);
+      }
 
       &:after {
          content: "";
@@ -143,7 +182,6 @@ a {
          width: 100%;
       }
    }
-
 
    .post-footer {
       position: absolute;
@@ -190,15 +228,5 @@ a {
          text-shadow: 0 0px 0px rgba(0,0,0,0);
          transition: all 750ms $custom-easing1;
       }
-   }
-}
-.featured-primary {
-   .post-footer .title {
-      font-size: 1.75em;
-   }
-}
-.featured-secondary {
-   .post-footer .title {
-      font-size: 1.5em;
    }
 }

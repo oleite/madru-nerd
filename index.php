@@ -37,8 +37,8 @@
 
                      <article class="featured-post featured-primary">
                         <div class="post-content">
-                           <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                              <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                           <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                              <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
                            </a>
                            <footer class="post-footer">
                               <h3 class="category"><?php the_category(' | '); ?></h3>
@@ -60,7 +60,7 @@
 
          //Arg para posts com valor madru_featured = secondary
          $argsSecondary = array(
-            'posts_per_page' => -2,
+            'posts_per_page' => -1,
             'meta_query' => array(
                array(
                   'key' => 'madru_featured',
@@ -78,8 +78,8 @@
 
                      <article class="featured-post featured-secondary">
                         <div class="post-content">
-                           <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                              <div class="featured-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
+                           <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                              <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
                            </a>
                            <footer class="post-footer">
                               <h3 class="category"><?php the_category(' | '); ?></h3>
@@ -131,7 +131,7 @@
                   <div class="post-content">
                      <span class="category"><?php the_category(' | '); ?></span>
                      <h2 class="title">
-                        <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                            <?php the_title(); ?>
                         </a>
                         |-> <?php echo get_post_meta( get_the_id(), 'madru_featured', true); ?>
