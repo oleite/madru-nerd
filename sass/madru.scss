@@ -1,5 +1,6 @@
 $primary-color: #FFDA18;
 $break: 800px;
+$custom-easing1: cubic-bezier(0.450, 0.045, 0.300, 0.980);
 
 body,
 html {
@@ -81,10 +82,43 @@ a {
 
 
 
+.post {
 
+   .category {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      color: $primary-color;
+      position: relative;
+      pointer-events: auto;
+      display: inline;
+
+      &:after {
+         content: "";
+         position: absolute;
+         width: 1.25em; //16px
+         border-bottom: 0.078125em solid $primary-color; //1px
+         bottom: -0.125rem; //-2px
+         left: 0.125rem; //2px
+
+         transition: all 750ms $custom-easing1;
+      }
+   }
+
+   .title {
+      margin: 0;
+      margin-top: 0.5em;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+   }
+}
 
 .featured-posts-container {
    width: 100%;
+   margin-bottom: 25px;
+
    display: flex;
    flex-direction: column;
 
@@ -122,15 +156,18 @@ a {
    min-height: 13rem;
    position: relative;
 
-   padding: 1rem 1rem;
+
    box-sizing: border-box;
 
-   @media (min-width: $break) {
-      //height: 23rem;
-      padding: 1rem 2rem;
-   }
+   .post-content {
+      padding: 1rem 1rem 1rem 1rem;
+      box-sizing: border-box;
 
-   $custom-easing1: cubic-bezier(0.450, 0.045, 0.300, 0.980);
+      @media (min-width: $break) {
+         //height: 23rem;
+         padding: 1rem 1rem 1.5rem 2rem;
+      }
+   }
 
    &:hover {
       .featured-image {
@@ -162,12 +199,23 @@ a {
       top: 0;
       left: 0;
 
-      background-color: #321;
+      background-color: #090b11;
       overflow: hidden;
 
       img {
          transition: transform 750ms $custom-easing1;
          transform: scale(1.07);
+
+         animation: fade-in-1 500ms $custom-easing1 0s 1;
+
+         @keyframes fade-in-1 {
+            0% {
+               opacity: 0;
+            }
+            100% {
+               opacity: 100%;
+            }
+         }
       }
 
       &:after {
@@ -185,9 +233,11 @@ a {
 
    .post-footer {
       position: absolute;
+      left: 0;
       bottom: 0;
+      padding: inherit;
+      box-sizing: border-box;
       z-index: 2;
-      bottom: 0;
       text-shadow: 0 2px 3px rgba(0,0,0,0.5);
       text-decoration: none;
       pointer-events: none;
@@ -197,36 +247,31 @@ a {
       }
 
       .category {
-         font-family: 'Montserrat', sans-serif;
-         font-weight: 500;
-         font-size: 0.75em;
-         text-transform: uppercase;
-         color: $primary-color;
-         position: relative;
-         pointer-events: auto;
-         display: inline;
-
-         &:after {
-            content: "";
-            position: absolute;
-            width: 1.25em; //16px
-            border-bottom: 0.078125em solid $primary-color; //1px
-            bottom: -0.125rem; //-2px
-            left: 0.125rem; //2px
-
-            transition: all 750ms $custom-easing1;
-         }
+         //especifico de posts em destaque
       }
 
       .title {
-         margin: 0;
-         margin-top: 0.5em;
-         color: #fff;
-         font-family: 'Montserrat', sans-serif;
          font-weight: 600;
 
          text-shadow: 0 0px 0px rgba(0,0,0,0);
          transition: all 750ms $custom-easing1;
       }
    }
+}
+
+
+.default-post {
+   display: flex;
+   margin: 10px;
+
+   .featured-image {
+      display: block;
+      height: 150px;
+      width: 150px;
+      margin-right: 10px;
+
+      background-color: #090b11;
+      overflow: hidden;
+   }
+
 }

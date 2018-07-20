@@ -35,7 +35,7 @@
                   $queryPrimary->the_post();
    ?>
 
-                     <article class="featured-post featured-primary">
+                     <article class="post featured-post featured-primary">
                         <div class="post-content">
                            <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                               <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
@@ -43,7 +43,7 @@
                            <footer class="post-footer">
                               <h3 class="category"><?php the_category(' | '); ?></h3>
                               <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                              <h2 class="title"><?php the_title(); ?><h2>
+                              <h2 class="title"><?php the_title(); ?></h2>
                            </footer>
                         </div>
                      </article>
@@ -76,7 +76,7 @@
                      $querySecondary->the_post();
       ?>
 
-                     <article class="featured-post featured-secondary">
+                     <article class="post featured-post featured-secondary">
                         <div class="post-content">
                            <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                               <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
@@ -84,7 +84,7 @@
                            <footer class="post-footer">
                               <h3 class="category"><?php the_category(' | '); ?></h3>
                               <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
-                              <h2 class="title"><?php the_title(); ?><h2>
+                              <h2 class="title"><?php the_title(); ?></h2>
                            </footer>
                         </div>
                      </article>
@@ -99,11 +99,11 @@
 <?php
 
    //
-   //    POSTS NORMAIS
+   //    POSTS NORMAIS (DEFAULT)
    //
 
    //Arg para todos os posts que não possuem valor madru_featured
-   $argsNormal = array(
+   $argsDefault = array(
       'posts_per_page' => -1,
       'meta_query' => array(
          'relation' => 'OR',
@@ -120,24 +120,23 @@
    );
 
    //Query custom
-   $queryNormal = new WP_Query($argsNormal);
+   $queryDefault = new WP_Query($argsDefault);
 
-   if ( $queryNormal->have_posts() ) :
-         while ( $queryNormal->have_posts() ) :
-               $queryNormal->the_post();
+   if ( $queryDefault->have_posts() ) :
+         while ( $queryDefault->have_posts() ) :
+               $queryDefault->the_post();
 ?>
 
-               <div class="normal-post">
+               <article class="post default-post">
+                  <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                     <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
+                  </a>
                   <div class="post-content">
-                     <span class="category"><?php the_category(' | '); ?></span>
-                     <h2 class="title">
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                           <?php the_title(); ?>
-                        </a>
-                        |-> <?php echo get_post_meta( get_the_id(), 'madru_featured', true); ?>
-                     </h2>
+                     <h3 class="category"><?php the_category(' | '); ?></h3>
+                     <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
+                     <h2 class="title"><?php the_title(); ?></h2>
                   </div>
-               </div>
+               </article>
 
    <?php endwhile; endif; ?>
 
