@@ -21,7 +21,7 @@
 
       <div class="header">
          <h1 class="site-title">
-            <a href="<?php home_url(); ?>">
+            <a href="<?php echo home_url(); ?>">
                <span class="mdn-logo"><?php  echo file_get_contents( get_stylesheet_directory_uri() . '/media/logo_mdn_prov.min.svg' ); ?></span>
                <span style="display: none"><?php bloginfo( 'name' ); ?></span>
             </a>
