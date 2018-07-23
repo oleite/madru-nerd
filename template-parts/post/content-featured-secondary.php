@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
    <div class="post-content">
-      <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+      <a class="featured-image responsify" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
          <?php the_post_thumbnail( 'post-thumbnail', madru_data_focus(get_the_id()) ) ?>
       </a>
       <footer class="post-footer">

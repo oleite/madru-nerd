@@ -1,5 +1,15 @@
 :root {
-    --items-per-width: 6;
+    --items-per-width: 2;
+
+    @media (min-width: 600px) {
+      --items-per-width: 3;
+   }
+    @media (min-width: 800px) {
+      --items-per-width: 4;
+   }
+    @media (min-width: 1200px) {
+      --items-per-width: 6;
+   }
 }
 
 .row-container {
@@ -32,13 +42,19 @@
 
          .slider-item {
             width: calc( 100% / var(--items-per-width));
+
             flex-shrink: 0;
+
+            transition: all 250ms ease;
 
             .slider-item-content {
                margin: 0 3px;
-               background-color: #444;
+               background-color: #222;
 
-               height: 150px;
+               img {
+                  width: 100%;
+                  pointer-events: none;
+               }
             }
          }
 

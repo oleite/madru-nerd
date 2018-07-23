@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
 
    $(window).load(function() {
-     $('img').responsify();
+     $('.responsify img').responsify();
    });
 
    $(window).resize(function(){
-     $('img').responsify();
+     $('.responsify img').responsify();
    })
 
 

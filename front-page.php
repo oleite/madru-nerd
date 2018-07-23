@@ -81,40 +81,64 @@ get_header(); ?>
             <div class="slider-scroll">
                <div class="slider-content">
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                   <div class="slider-item">
-                     <div class="slider-item-content"></div>
+                     <div class="slider-item-content">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/media/stand-by.png" />
+                     </div>
                   </div>
                </div>
             </div>
