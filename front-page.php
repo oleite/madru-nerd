@@ -70,6 +70,70 @@ get_header(); ?>
 </div> <!-- .featured-posts-container -->
 
 
+
+
+
+   <div class="row-container">
+      <div class="row-title">Últimos vídeos</div>
+      <div class="row-content">
+
+         <div class="slider">
+            <div class="slider-scroll">
+               <div class="slider-content">
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+                  <div class="slider-item">
+                     <div class="slider-item-content"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 
    //

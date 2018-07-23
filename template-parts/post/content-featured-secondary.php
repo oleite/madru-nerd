@@ -18,7 +18,6 @@
       </a>
       <footer class="post-footer">
          <h3 class="category"><?php the_category(' | '); ?></h3>
-         <a href="<?php the_permalink(); ?>" title="Link para: <?php the_title_attribute(); ?>">
          <h2 class="title"><?php the_title(); ?></h2>
       </footer>
    </div>

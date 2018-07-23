@@ -41,6 +41,25 @@
 @media (min-width: 800px) { .featured-post .post-footer { font-size: 1.25rem; } }
 .featured-post .post-footer .title { font-weight: 600; text-shadow: 0 0px 0px rgba(0, 0, 0, 0); -webkit-transition: all 750ms cubic-bezier(0.45, 0.045, 0.3, 0.98); transition: all 750ms cubic-bezier(0.45, 0.045, 0.3, 0.98); }
 
+:root { --items-per-width: 6; }
+
+.row-container { margin: 30px 0 40px 0; }
+.row-container .row-title { margin: 0 4% 0.5em 4%; color: rgba(255, 255, 255, 0.8); font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.125em; }
+
+.slider { padding: 0 4%; overflow-x: hidden; }
+.slider .slider-scroll .slider-content { display: -webkit-box; display: -ms-flexbox; display: flex; overflow-x: visible; -webkit-transition: -webkit-transform 250ms ease; transition: -webkit-transform 250ms ease; transition: transform 250ms ease; transition: transform 250ms ease, -webkit-transform 250ms ease; }
+.slider .slider-scroll .slider-content .slider-item { width: calc( 100% / var(--items-per-width)); -ms-flex-negative: 0; flex-shrink: 0; }
+.slider .slider-scroll .slider-content .slider-item .slider-item-content { margin: 0 3px; background-color: #444; height: 150px; }
+@-webkit-keyframes cant_slide_right { 0% { -webkit-transform: translateX(0px); transform: translateX(0px); }
+  25% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+  50% { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
+  100% { -webkit-transform: translateX(0px); transform: translateX(0px); } }
+@keyframes cant_slide_right { 0% { -webkit-transform: translateX(0px); transform: translateX(0px); }
+  25% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+  50% { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
+  100% { -webkit-transform: translateX(0px); transform: translateX(0px); } }
+.slider .slider-scroll .slider-content.cant-slide-right { -webkit-animation: cant_slide_right 400ms ease; animation: cant_slide_right 400ms ease; }
+
 body, html { margin: 0; padding: 0; }
 
 body { background-color: #0B1126; }
