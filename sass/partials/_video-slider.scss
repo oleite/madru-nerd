@@ -38,7 +38,7 @@
          display: flex;
          overflow-x: visible;
 
-         transition: transform 250ms ease;
+         //transition: transform 450ms ease;
 
          .slider-item {
             width: calc( 100% / var(--items-per-width));

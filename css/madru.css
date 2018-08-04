@@ -50,7 +50,7 @@
 .row-container .row-title { margin: 0 4% 0.5em 4%; color: rgba(255, 255, 255, 0.8); font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.125em; }
 
 .slider { padding: 0 4%; overflow-x: hidden; }
-.slider .slider-scroll .slider-content { display: -webkit-box; display: -ms-flexbox; display: flex; overflow-x: visible; -webkit-transition: -webkit-transform 250ms ease; transition: -webkit-transform 250ms ease; transition: transform 250ms ease; transition: transform 250ms ease, -webkit-transform 250ms ease; }
+.slider .slider-scroll .slider-content { display: -webkit-box; display: -ms-flexbox; display: flex; overflow-x: visible; }
 .slider .slider-scroll .slider-content .slider-item { width: calc( 100% / var(--items-per-width)); -ms-flex-negative: 0; flex-shrink: 0; -webkit-transition: all 250ms ease; transition: all 250ms ease; }
 .slider .slider-scroll .slider-content .slider-item .slider-item-content { margin: 0 3px; background-color: #222; }
 .slider .slider-scroll .slider-content .slider-item .slider-item-content img { width: 100%; pointer-events: none; }
