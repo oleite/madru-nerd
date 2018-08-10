@@ -11,7 +11,8 @@
 .post .title { margin: 0; margin-top: 0.5em; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 500; }
 
 .default-post { display: -webkit-box; display: -ms-flexbox; display: flex; margin: 10px; }
-.default-post .featured-image { display: block; height: 150px; width: 150px; margin-right: 10px; background-color: #090b11; overflow: hidden; }
+.default-post .featured-image { display: block; height: 150px; margin-right: 10px; background-color: #090b11; overflow: hidden; }
+.default-post .featured-image img { height: 100%; width: auto; }
 
 .featured-posts-container { width: 100%; margin-bottom: 25px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; border-bottom: 0.1rem solid #FFDA18; }
 @media (min-width: 600px) { .featured-posts-container { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; } }
@@ -63,6 +64,10 @@
   50% { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
   100% { -webkit-transform: translateX(0px); transform: translateX(0px); } }
 .slider .slider-scroll .slider-content.cant-slide-right { -webkit-animation: cant_slide_right 400ms ease; animation: cant_slide_right 400ms ease; }
+
+.single .featured-image { display: block; width: 100%; height: 400px; max-height: 75vh; position: relative; overflow: hidden; }
+.single .featured-image img { position: absolute; width: 100%; height: auto; margin: auto; top: 0; bottom: 0; -webkit-filter: blur(100px); filter: blur(100px); }
+.single .featured-image:after { content: ""; position: absolute; z-index: 1; top: 0; left: 0; background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))); background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); -webkit-transition: all 750ms cubic-bezier(0.45, 0.045, 0.3, 0.98); transition: all 750ms cubic-bezier(0.45, 0.045, 0.3, 0.98); height: 100%; width: 100%; }
 
 body, html { margin: 0; padding: 0; }
 

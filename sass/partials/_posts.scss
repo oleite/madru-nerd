@@ -39,11 +39,15 @@
    .featured-image {
       display: block;
       height: 150px;
-      width: 150px;
       margin-right: 10px;
 
       background-color: #090b11;
       overflow: hidden;
+
+      img {
+         height: 100%;
+         width: auto;
+      }
    }
 
 }
