@@ -26,8 +26,8 @@ function madru_load_scripts() {
    wp_enqueue_script( 'hammer-js', get_template_directory_uri() . '/js/hammer.min.js', array(), '2.0.8', true );
    wp_enqueue_script( 'jquery-hammer-js', get_template_directory_uri() . '/js/jquery.hammer.js', array(), '2.0.0', true );
 
-   wp_enqueue_style( 'madru-style', get_template_directory_uri() . '/css/madru.css', array(), '0.1', $media = 'all' );
-   wp_enqueue_script( 'madru-js', get_template_directory_uri() . '/js/madru.js', array(), false, true );
+   wp_enqueue_style( 'madru-style', get_template_directory_uri() . '/css/madru.css', array(), '0.2', $media = 'all' );
+   wp_enqueue_script( 'madru-js', get_template_directory_uri() . '/js/madru.js', array(), '0.1', true );
 
    // Responsify.js > http://responsifyjs.space/app/
    wp_enqueue_script( 'responsify-js', get_template_directory_uri() . '/js/responsify.min.js', array(), false, true );

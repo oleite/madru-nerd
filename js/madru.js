@@ -1,11 +1,19 @@
 jQuery(document).ready(function($) {
 
    $(window).load(function() {
-     $('.responsify img').responsify();
+      $('.responsify img').responsify();
+
+      if ($(window).width() > 800) {
+       $('.responsify-min800 img').responsify();
+      }
    });
    $(window).resize(function(){
-     $('.responsify img').responsify();
-  });
+      $('.responsify img').responsify();
+
+      if ($(window).width() > 800) {
+       $('.responsify-min800 img').responsify();
+      }
+   });
 
 
 

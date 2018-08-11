@@ -91,15 +91,6 @@
          transform: scale(1.07);
 
          animation: fade-in-1 500ms $custom-easing1 0s 1;
-
-         @keyframes fade-in-1 {
-            0% {
-               opacity: 0;
-            }
-            100% {
-               opacity: 100%;
-            }
-         }
       }
 
       &:after {
